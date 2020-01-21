@@ -1,0 +1,13 @@
+version: '3'
+services:
+  statsd-graphite:
+    image: graphiteapp/graphite-statsd
+    ports:
+      [80:80,8126:8126,8125:8125/udp]
+    
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    ports:
+      [3000:3000]
