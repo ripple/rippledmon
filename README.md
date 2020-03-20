@@ -83,7 +83,7 @@ Metrics will be added to rippled over time and new dashboards will be added to t
 Timers with the jobq tag report the amount of time it took to execute the job in ms. You will also see the metrics above with an "_q" suffix. The corresponding "_q" metrics report the amount of time it took to dequeue the job. 
 
 | Counter Metric Tags |Description|
-|---------------------|:---------:|
+|---------------------|:---------|
 | ledger_fetches | Number of ledger fetches in the last collection interval|
 | jobq.job_count | Number of jobs in the job queue |
 | full_below.size | Size of the [FullBelowCache](https://github.com/ripple/rippled/blob/develop/src/ripple/shamap/FullBelowCache.h)
@@ -91,13 +91,13 @@ Timers with the jobq tag report the amount of time it took to execute the job in
 
 **Age Gauges**
 | Age Gauge Metric Tags | Description |
-|---------------------|:---------:|
+|---------------------|:---------|
 | LedgerMaster.Validated_Ledger_Age| The age of the last validated ledger in seconds|
 | LedgerMaster.Published_Ledger_Age| The age of the last published ledger in seconds|
 
 **State Accounting Gauges**
 | State Accounting Gauge Metric Tags | Description |
-|---------------------|:---------:|
+|---------------------|:---------|
 | State_Accounting.Disconnected_duration| The total amount of time spent in the 'Disconnected' state as displayed by server_info in microseconds|
 | State_Accounting.Connected_duration| The total amount of time spent in the 'Connected' state as displayed by server_info in microseconds|
 | State_Accounting.Syncing_duration| The total amount of time spent in the 'Syncing' state as displayed by server_info in microseconds|
@@ -111,7 +111,7 @@ Timers with the jobq tag report the amount of time it took to execute the job in
 
 **Peer Metric Gauges**
 | Gauge Metric Tags | Description |
-|---------------------|:---------:|
+|---------------------|:---------|
 | Peer_Finder.Active_Inbound_Peers| The number of active inbound peer connections|
 | Peer_Finder.Active_Outbound_Peers| The number of active outbound peer connections|
 | Overlay.Peer_Disconnects| The total number of peer disconnects |
@@ -121,7 +121,7 @@ Timers with the jobq tag report the amount of time it took to execute the job in
 Traffic count metrics are exported for each of the traffic categories below. There are 4 different metrics tracked for each category: BytesIn, BytesOut, MessagesIn, and MessagesOut.
 
 | Traffic Count Gauge Metric Tags | Description |
-|---------------------|:---------:|
+|---------------------|:---------|
 | *category*.BytesIn | Total number of bytes received from traffic of this category|
 |*category*.BytesOut| Total number of bytes transmitted from traffic of this category
 |*category*.MessagesIn| Total number of messages recieved from traffic of this category|
