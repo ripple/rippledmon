@@ -87,7 +87,86 @@ Timers with the jobq tag report the amount of time it took to execute the job in
 | ledger_fetches | Number of ledger fetches in the last collection interval|
 | jobq.job_count | Number of jobs in the job queue |
 | full_below.size | Size of the [FullBelowCache](https://github.com/ripple/rippled/blob/develop/src/ripple/shamap/FullBelowCache.h)
-| full_below.hit_rate | Hit Rate of the [FullBelowCache](https://github.com/ripple/rippled/blob/develop/src/ripple/shamap/FullBelowCache.h) 
+| full_below.hit_rate | Hit Rate of the [FullBelowCache](https://github.com/ripple/rippled/blob/develop/src/ripple/shamap/FullBelowCache.h)|\
+
+
+
+| Gauge Metric Tags | Description |
+|---------------------|:---------:|
+| LedgerMaster.Validated_Ledger_Age| The age of the last validated ledger in seconds|
+| LedgerMaster.Published_Ledger_Age| The age of the last published ledger in seconds|
+| State_Accounting.Disconnected_duration| The total amount of time spent in the 'Disconnected' state as displayed by server_info in microseconds|
+| State_Accounting.Connected_duration| The total amount of time spent in the 'Connected' state as displayed by server_info in microseconds|
+| State_Accounting.Syncing_duration| The total amount of time spent in the 'Syncing' state as displayed by server_info in microseconds|
+| State_Accounting.Tracking_duration| The total amount of time spent in the 'Tracking' state as displayed by server_info in microseconds|
+| State_Accounting.Full_duration| The total amount of time spent in the 'Full' state as output by server_info in microseconds|
+| State_Accounting.Disconnected_transitions| The number of transitions into the 'Disconnected' state as displayed by server_info|
+| State_Accounting.Connected_transitions| The number of transitions into the 'Connected' state as displayed by server_info|
+| State_Accounting.Syncing_transitions| The number of transitions into the 'Syncing' state as displayed by server_info|
+| State_Accounting.Tracking_transitions| The number of transitions into the 'Tracking' state as displayed by server_info|
+| State_Accounting.Full_transitions| The number of transitions into the 'Full' state as displayed by server_info|
+| Peer_Finder.Active_Inbound_Peers| The number of active inbound peer connections|
+| Peer_Finder.Active_Outbound_Peers| The number of active outbound peer connections|
+| Overlay.Peer_Disconnects| The total number of peer disconnects |
+
+
+**Traffic Counts Gauges**
+
+Traffic count metrics are exported for each of the traffic categories below. There are 4 different metrics tracked for each category: BytesIn, BytesOut, MessagesIn, and MessagesOut.
+
+| Traffic Count Gauge Metric Tags | Description |
+|---------------------|:---------:|
+| *category*.BytesIn | Total number of bytes received from traffic of this category|
+|*category*.BytesOut| Total number of bytes transmitted from traffic of this category
+|*category*.MessagesIn| Total number of messages recieved from traffic of this category|
+|*category*.MessageOut| Total number of messages transmitted from traffic of this category|
+
+
+|Traffic Categories|
+|----------|
+|overhead|                                     
+|overhead_cluster|                               
+|overhead_overlay|                               
+|overhead_manifest|                              
+|transactions|                                
+|proposals|                                   
+|validations|                                  
+|shards|                                       
+|set_get|                                        
+|set_share|                                       
+|ledger_data_Transaction_Set_candidate_get|       
+|ledger_data_Transaction_Set_candidate_share|     
+|ledger_data_Transaction_Node_get|                
+|ledger_data_Transaction_Node_share|             
+|ledger_data_Account_State_Node_get|              
+|ledger_data_Account_State_Node_share|            
+|ledger_data_get|                                
+|ledger_data_share|                              
+|ledger_Transaction_Set_candidate_share|          
+|ledger_Transaction_Set_candidate_get|          
+|ledger_Transaction_node_share|                
+|ledger_Transaction_node_get|                   
+|ledger_Account_State_node_share|                 
+|ledger_Account_State_node_get|                 
+|ledger_share|                        
+|ledger_get|                                
+|getobject_Ledger_share|                         
+|getobject_Ledger_get|                          
+|getobject_Transaction_share|                    
+|getobject_Transaction_get|                       
+|getobject_Transaction_node_share|                
+|getobject_Transaction_node_get|                 
+|getobject_Account_State_node_share|              
+|getobject_Account_State_node_get|               
+|getobject_CAS_share|                    
+|getobject_CAS_get|                       
+|getobject_Fetch_Pack_share|                     
+|getobject_Fetch Pack_get|                      
+|getobject_share|                          
+|getobject_get|                          
+|unknown|                        
+
+Please note that all gauge type metrics are only sent when their value changes in rippled at least once. If you do not see any particular metric it means that it has not changed since startup. 
 
 ## Acknowledgements:
 Inspired by [lndmon](https://github.com/lightninglabs/lndmon)  
