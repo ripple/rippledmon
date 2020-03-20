@@ -98,7 +98,6 @@ Timers with the jobq tag report the amount of time it took to execute the job in
 **State Accounting Gauges**
 | State Accounting Gauge Metric Tags | Description |
 |---------------------|:---------:|
-
 | State_Accounting.Disconnected_duration| The total amount of time spent in the 'Disconnected' state as displayed by server_info in microseconds|
 | State_Accounting.Connected_duration| The total amount of time spent in the 'Connected' state as displayed by server_info in microseconds|
 | State_Accounting.Syncing_duration| The total amount of time spent in the 'Syncing' state as displayed by server_info in microseconds|
