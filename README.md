@@ -17,7 +17,7 @@ Docker and docker-compose must be installed on your system. For more details on 
 1. Clone this repo and start the docker containers with docker-compose
 
 ```
-$ git clone https://github.com/rippled/rippledmon.git
+$ git clone https://github.com/ripple/rippledmon.git
 $ cd rippledmon
 $ docker-compose up
 ```
